@@ -1,0 +1,344 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\author{}
+\date{}
+
+\begin{document}
+
+\hypertarget{ux5b9eux9a8cux62a5ux544a2}{%
+\subsection{实验报告2}\label{ux5b9eux9a8cux62a5ux544a2}}
+
+\hypertarget{ux59d3ux540dux5434ux6bc5ux9f99----ux5b66ux53f7pb19111749}{%
+\subparagraph{姓名：吴毅龙
+学号：PB19111749}\label{ux59d3ux540dux5434ux6bc5ux9f99----ux5b66ux53f7pb19111749}}
+
+\hypertarget{1-ux95eeux9898}{%
+\subsubsection{1. 问题}\label{1-ux95eeux9898}}
+
+\begin{itemize}
+\item
+  分别编写\textbf{Newton迭代法和对分法}的程序，并利用它们去计算如下非线性方程的根\(f(x)=2^{-x}+e^x+2cosx-6\)
+
+  其中，对分法的初始区间取\([0,10]\)，Newton迭代法的初始点分别取0和10.
+\item
+  取误差限\(ε={10}^{-8}\)，即当\(|f(x_k)|<ε\)时，停止迭代
+\item
+  列表给出每步的迭代结果或者前后5步的迭代结果（如果迭代步数超过10步时）以及迭代总步数；比较并分析两种方法的优劣。
+\end{itemize}
+
+\hypertarget{2-ux8ba1ux7b97ux8fc7ux7a0bux53caux8ba1ux7b97ux7ed3ux679c}{%
+\subsubsection{2.
+计算过程及计算结果}\label{2-ux8ba1ux7b97ux8fc7ux7a0bux53caux8ba1ux7b97ux7ed3ux679c}}
+
+\hypertarget{21-ux7b97ux6cd5ux4e0eux7a0bux5e8fux5b9eux73b0}{%
+\paragraph{2.1
+算法与程序实现}\label{21-ux7b97ux6cd5ux4e0eux7a0bux5e8fux5b9eux73b0}}
+
+\textbf{Newton迭代法}的基本流程为：确定迭代、变量建立迭代关系式、对迭代过程进行控制。
+
+基于\textbf{二分法求方程的根}的原理是介值定理，即通过给定两个初始值a和b，使f(a)f(b)\textless0。如果f(x)是连续的，则必然在(a,b)内存在一个值c，使f(c)=0。
+
+首先计算c=(a+b)/2;如果f(c)=0，则直接返回c即可，否则，进行下面的判断：如果f(a)f(c)\textgreater0，则令a=c，否则令b=c。
+
+使用C语言对上述算法进行程序实现
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\PreprocessorTok{\#include}\ImportTok{\textless{}stdio.h\textgreater{}}
+\PreprocessorTok{\#include}\ImportTok{\textless{}math.h\textgreater{}}
+\PreprocessorTok{\#define e 2.718281828}
+\PreprocessorTok{\#define epslion 1e{-}8}
+
+\DataTypeTok{double}\NormalTok{ PrimitiveFunction}\OperatorTok{(}\DataTypeTok{double}\NormalTok{ x}\OperatorTok{)}
+\OperatorTok{\{}
+	\ControlFlowTok{return}\NormalTok{ pow}\OperatorTok{(}\DecValTok{2}\OperatorTok{,} \OperatorTok{{-}}\NormalTok{x}\OperatorTok{)} \OperatorTok{+}\NormalTok{ pow}\OperatorTok{(}\NormalTok{e}\OperatorTok{,}\NormalTok{ x}\OperatorTok{)} \OperatorTok{+} \DecValTok{2} \OperatorTok{*}\NormalTok{ cos}\OperatorTok{(}\NormalTok{x}\OperatorTok{)} \OperatorTok{{-}} \DecValTok{6}\OperatorTok{;}
+\OperatorTok{\}}
+
+\DataTypeTok{double}\NormalTok{ DerivativeFunction}\OperatorTok{(}\DataTypeTok{double}\NormalTok{ x}\OperatorTok{)}
+\OperatorTok{\{}
+	\ControlFlowTok{return} \OperatorTok{{-}}\DecValTok{1} \OperatorTok{*}\NormalTok{ pow}\OperatorTok{(}\DecValTok{2}\OperatorTok{,} \OperatorTok{{-}}\NormalTok{x}\OperatorTok{)} \OperatorTok{*}\NormalTok{ log}\OperatorTok{(}\DecValTok{2}\OperatorTok{)} \OperatorTok{+}\NormalTok{ pow}\OperatorTok{(}\NormalTok{e}\OperatorTok{,}\NormalTok{ x}\OperatorTok{)} \OperatorTok{{-}} \DecValTok{2} \OperatorTok{*}\NormalTok{ sin}\OperatorTok{(}\NormalTok{x}\OperatorTok{);}
+\OperatorTok{\}}
+
+\DataTypeTok{void}\NormalTok{ NewtonMethod}\OperatorTok{(}\DataTypeTok{double}\NormalTok{ x}\OperatorTok{)}
+\OperatorTok{\{}
+	\DataTypeTok{int}\NormalTok{ k }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}
+	\ControlFlowTok{while} \OperatorTok{(}\NormalTok{fabs}\OperatorTok{(}\NormalTok{PrimitiveFunction}\OperatorTok{(}\NormalTok{x}\OperatorTok{))} \OperatorTok{\textgreater{}=}\NormalTok{ epslion}\OperatorTok{)}
+	\OperatorTok{\{}
+\NormalTok{		printf}\OperatorTok{(}\StringTok{"k=\%d	x\%d=\%0.10f		f(x)=\%0.10f}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\OperatorTok{,}\NormalTok{ k}\OperatorTok{,}\NormalTok{ k}\OperatorTok{,}\NormalTok{ x}\OperatorTok{,}\NormalTok{ PrimitiveFunction}\OperatorTok{(}\NormalTok{x}\OperatorTok{));}
+\NormalTok{		x }\OperatorTok{=}\NormalTok{ x }\OperatorTok{{-}}\NormalTok{ PrimitiveFunction}\OperatorTok{(}\NormalTok{x}\OperatorTok{)} \OperatorTok{/}\NormalTok{ DerivativeFunction}\OperatorTok{(}\NormalTok{x}\OperatorTok{);}
+\NormalTok{		k}\OperatorTok{++;}
+	\OperatorTok{\}}
+\NormalTok{	printf}\OperatorTok{(}\StringTok{"k=\%d	x\%d=\%0.10f		f(x)=\%0.10f}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\OperatorTok{,}\NormalTok{ k}\OperatorTok{,}\NormalTok{ k}\OperatorTok{,}\NormalTok{ x}\OperatorTok{,}\NormalTok{ PrimitiveFunction}\OperatorTok{(}\NormalTok{x}\OperatorTok{));}
+\OperatorTok{\}}
+
+\DataTypeTok{double}\NormalTok{ Half}\OperatorTok{(}\DataTypeTok{double}\NormalTok{ x}\OperatorTok{,} \DataTypeTok{double}\NormalTok{ y}\OperatorTok{)}
+\OperatorTok{\{}
+\NormalTok{	x }\OperatorTok{=}\NormalTok{ x }\OperatorTok{*} \DecValTok{10000000}\OperatorTok{;}
+\NormalTok{	y }\OperatorTok{=}\NormalTok{ y }\OperatorTok{*} \DecValTok{10000000}\OperatorTok{;}
+	\ControlFlowTok{return} \OperatorTok{(}\NormalTok{x }\OperatorTok{+}\NormalTok{ y}\OperatorTok{)} \OperatorTok{/} \DecValTok{20000000}\OperatorTok{;}
+\OperatorTok{\}}
+
+\DataTypeTok{void}\NormalTok{ BisectionMethod}\OperatorTok{(}\DataTypeTok{double}\NormalTok{ low}\OperatorTok{,} \DataTypeTok{double}\NormalTok{ high}\OperatorTok{)}
+\OperatorTok{\{}
+	\DataTypeTok{int}\NormalTok{ k }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}
+	\DataTypeTok{double}\NormalTok{ root }\OperatorTok{=} \OperatorTok{(}\NormalTok{low }\OperatorTok{+}\NormalTok{ high}\OperatorTok{)} \OperatorTok{/} \DecValTok{2}\OperatorTok{;}
+	\DataTypeTok{double}\NormalTok{ left }\OperatorTok{=}\NormalTok{ PrimitiveFunction}\OperatorTok{(}\NormalTok{low}\OperatorTok{);}
+	\DataTypeTok{double}\NormalTok{ right }\OperatorTok{=}\NormalTok{ PrimitiveFunction}\OperatorTok{(}\NormalTok{high}\OperatorTok{);}
+	\DataTypeTok{double}\NormalTok{ middle }\OperatorTok{=}\NormalTok{ PrimitiveFunction}\OperatorTok{(}\NormalTok{root}\OperatorTok{);}
+	\ControlFlowTok{while} \OperatorTok{(}\NormalTok{fabs}\OperatorTok{(}\NormalTok{middle}\OperatorTok{)} \OperatorTok{\textgreater{}=}\NormalTok{ epslion}\OperatorTok{)}
+	\OperatorTok{\{}
+\NormalTok{		printf}\OperatorTok{(}\StringTok{"k=\%d	[\%0.10f,\%0.10f]		root=\%0.10f		f(x)=\%0.10f}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\OperatorTok{,}\NormalTok{ k}\OperatorTok{,}\NormalTok{ low}\OperatorTok{,}\NormalTok{ high}\OperatorTok{,}\NormalTok{ root}\OperatorTok{,}\NormalTok{ middle}\OperatorTok{);}
+		\ControlFlowTok{if} \OperatorTok{((}\NormalTok{middle }\OperatorTok{\textless{}}\NormalTok{epslion }\OperatorTok{\&\&}\NormalTok{ right }\OperatorTok{\textgreater{}}\NormalTok{ epslion}\OperatorTok{)||(}\NormalTok{middle }\OperatorTok{\textgreater{}}\NormalTok{ epslion }\OperatorTok{\&\&}\NormalTok{ right }\OperatorTok{\textless{}}\NormalTok{ epslion}\OperatorTok{))}
+		\OperatorTok{\{}
+\NormalTok{			low }\OperatorTok{=}\NormalTok{ root}\OperatorTok{;}
+\NormalTok{			root }\OperatorTok{=}\NormalTok{ Half}\OperatorTok{(}\NormalTok{low}\OperatorTok{,}\NormalTok{ high}\OperatorTok{);}
+\NormalTok{			left }\OperatorTok{=}\NormalTok{ PrimitiveFunction}\OperatorTok{(}\NormalTok{low}\OperatorTok{);}
+\NormalTok{			middle }\OperatorTok{=}\NormalTok{ PrimitiveFunction}\OperatorTok{(}\NormalTok{root}\OperatorTok{);}
+\NormalTok{			k}\OperatorTok{++;}
+		\OperatorTok{\}}
+		\ControlFlowTok{else}
+		\OperatorTok{\{}
+			\ControlFlowTok{if} \OperatorTok{((}\NormalTok{middle }\OperatorTok{\textless{}}\NormalTok{epslion }\OperatorTok{\&\&}\NormalTok{ left }\OperatorTok{\textgreater{}}\NormalTok{ epslion}\OperatorTok{)} \OperatorTok{||} \OperatorTok{(}\NormalTok{middle }\OperatorTok{\textgreater{}}\NormalTok{ epslion}\OperatorTok{\&\&}\NormalTok{ left }\OperatorTok{\textless{}}\NormalTok{ epslion}\OperatorTok{))}
+			\OperatorTok{\{}
+\NormalTok{				high }\OperatorTok{=}\NormalTok{ root}\OperatorTok{;}
+\NormalTok{				root }\OperatorTok{=}\NormalTok{ Half}\OperatorTok{(}\NormalTok{low}\OperatorTok{,}\NormalTok{ high}\OperatorTok{);}
+\NormalTok{				right }\OperatorTok{=}\NormalTok{ PrimitiveFunction}\OperatorTok{(}\NormalTok{high}\OperatorTok{);}
+\NormalTok{				middle }\OperatorTok{=}\NormalTok{ PrimitiveFunction}\OperatorTok{(}\NormalTok{root}\OperatorTok{);}
+\NormalTok{				k}\OperatorTok{++;}
+			\OperatorTok{\}}
+			\ControlFlowTok{else}
+			\OperatorTok{\{}
+\NormalTok{				printf}\OperatorTok{(}\StringTok{"ERROR!}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\OperatorTok{);}
+				\ControlFlowTok{break}\OperatorTok{;}
+			\OperatorTok{\}}
+		\OperatorTok{\}}
+	\OperatorTok{\}}
+\NormalTok{	printf}\OperatorTok{(}\StringTok{"k=\%d	[\%0.10f,\%0.10f]		root=\%0.10f		f(x)=\%0.10f}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\OperatorTok{,}\NormalTok{ k}\OperatorTok{,}\NormalTok{ low}\OperatorTok{,}\NormalTok{ high}\OperatorTok{,}\NormalTok{ root}\OperatorTok{,}\NormalTok{ middle}\OperatorTok{);}
+\OperatorTok{\}}
+
+\DataTypeTok{int}\NormalTok{ main}\OperatorTok{()}
+\OperatorTok{\{}
+	\DataTypeTok{double}\NormalTok{ x1}\OperatorTok{,}\NormalTok{ x2}\OperatorTok{;}
+	\DataTypeTok{double}\NormalTok{ low}\OperatorTok{,}\NormalTok{ high}\OperatorTok{;}
+\NormalTok{	scanf}\OperatorTok{(}\StringTok{"\%lf \%lf"}\OperatorTok{,} \OperatorTok{\&}\NormalTok{x1}\OperatorTok{,} \OperatorTok{\&}\NormalTok{x2}\OperatorTok{);}
+\NormalTok{	scanf}\OperatorTok{(}\StringTok{"\%lf \%lf"}\OperatorTok{,} \OperatorTok{\&}\NormalTok{low}\OperatorTok{,} \OperatorTok{\&}\NormalTok{high}\OperatorTok{);}
+
+\NormalTok{	printf}\OperatorTok{(}\StringTok{"Newton Method for x1}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\OperatorTok{);}
+\NormalTok{	NewtonMethod}\OperatorTok{(}\NormalTok{x1}\OperatorTok{);}
+\NormalTok{	printf}\OperatorTok{(}\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\OperatorTok{);}
+
+\NormalTok{	printf}\OperatorTok{(}\StringTok{"Newton Method for x2}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\OperatorTok{);}
+\NormalTok{	NewtonMethod}\OperatorTok{(}\NormalTok{x2}\OperatorTok{);}
+\NormalTok{	printf}\OperatorTok{(}\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\OperatorTok{);}
+
+
+\NormalTok{	printf}\OperatorTok{(}\StringTok{"Bisection Method}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\OperatorTok{);}
+\NormalTok{	BisectionMethod}\OperatorTok{(}\NormalTok{low}\OperatorTok{,}\NormalTok{ high}\OperatorTok{);}
+	\ControlFlowTok{return} \DecValTok{0}\OperatorTok{;}
+\OperatorTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{22-ux8ba1ux7b97ux7ed3ux679c}{%
+\paragraph{2.2 计算结果}\label{22-ux8ba1ux7b97ux7ed3ux679c}}
+
+\hypertarget{221-newtonux8fedux4ee3ux6cd5}{%
+\subparagraph{2.2.1 Newton迭代法}\label{221-newtonux8fedux4ee3ux6cd5}}
+
+\begin{itemize}
+\item
+  初值\(x_0=0\)的Newton迭代结果
+\end{itemize}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule
+迭代步数k & \(x_k\) & \(f(x_k)\) \\
+\midrule
+\endhead
+\(k=0\) & 0.0000000000 & -2.0000000000 \\
+\(k=1\) & 6.5177827065 & 673.0315732306 \\
+\(k=2\) & 5.5230611395 & 245.8716230513 \\
+\(k=3\) & 4.5464628865 & 88.0107359569 \\
+\(k=4\) & 3.6319814821 & 30.1039795420 \\
+\(k=5\) & 2.8535707847 & 9.5703611468 \\
+\(k=6\) & 2.2800010916 & 2.6801276990 \\
+\(k=7\) & 1.9497821270 & 0.5460548492 \\
+\(k=8\) & 1.8403446404 & 0.0453715661 \\
+\(k=9\) & 1.8294833422 & 0.0004091171 \\
+\(k=10\) & 1.8293836107 & 0.0000000342 \\
+\(k=11\) & 1.8293836024 & 0.0000000000 \\
+\bottomrule
+\end{longtable}
+
+\begin{itemize}
+\item
+  初值\(x_0=10\)的Newton迭代结果
+\end{itemize}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule
+迭代步数k & \(x_k\) & \(f(x_k)\) \\
+\midrule
+\endhead
+\(k=0\) & 10.0000000000 & 22018.7885911142 \\
+\(k=1\) & 9.0003978895 & 8098.4880529237 \\
+\(k=2\) & 8.0012609805 & 2978.4296918299 \\
+\(k=3\) & 7.0027054717 & 1095.1161260613 \\
+\(k=4\) & 6.0055867983 & 401.6279733817 \\
+\(k=5\) & 5.0169063711 & 145.5741686140 \\
+\(k=6\) & 4.0643840546 & 51.0816097141 \\
+\(k=7\) & 3.2099219086 & 16.8898913273 \\
+\(k=8\) & 2.5299415504 & 5.0885160278 \\
+\(k=9\) & 2.0790045507 & 1.2599570918 \\
+\(k=10\) & 1.8719524207 & 0.1809311653 \\
+\(k=11\) & 1.8308468174 & 0.0060087418 \\
+\(k=12\) & 1.8293853949 & 0.0000073519 \\
+\(k=13\) & 1.8293836024 & 0.0000000000 \\
+\bottomrule
+\end{longtable}
+
+\hypertarget{222-ux5bf9ux5206ux6cd5}{%
+\subparagraph{2.2.2 对分法}\label{222-ux5bf9ux5206ux6cd5}}
+
+\begin{longtable}[]{@{}llll@{}}
+\toprule
+迭代步数k & 区间 & 区间中点 & \(f(x_k)\) \\
+\midrule
+\endhead
+\(k=0\) & {[}0.0000000000,10.0000000000{]} & 5.0000000000 &
+143.0117333482 \\
+\(k=1\) & {[}0.0000000000,5.0000000000{]} & 2.5000000000 &
+4.7569834198 \\
+\(k=2\) & {[}0.0000000000,2.5000000000{]} & 1.2500000000 &
+-1.4585641109 \\
+\(k=3\) & {[}1.2500000000,2.5000000000{]} & 1.8750000000 &
+0.1943790391 \\
+\(k=4\) & {[}1.2500000000,1.8750000000{]} & 1.5625000000 &
+-0.8741104693 \\
+\(k=5\) & {[}1.5625000000,1.8750000000{]} & 1.7187500000 &
+-0.4134649413 \\
+.......... & .......... & .......... & .......... \\
+\(k=25\) & {[}1.8293833733,1.8293836713{]} & 1.8293835223 &
+-0.0000003287 \\
+\(k=26\) & {[}1.8293835223,1.8293836713{]} & 1.8293835968 &
+-0.0000000231 \\
+\(k=27\) & {[}1.8293835968,1.8293836713{]} & 1.8293836340 &
+0.0000001297 \\
+\(k=28\) & {[}1.8293835968,1.8293836340{]} & 1.8293836154 &
+0.0000000533 \\
+\(k=29\) & {[}1.8293835968,1.8293836154{]} & 1.8293836061 &
+0.0000000151 \\
+\(k=30\) & {[}1.8293835968,1.8293836061{]} & 1.8293836014 &
+-0.0000000040 \\
+\bottomrule
+\end{longtable}
+
+\hypertarget{3-ux8ba1ux7b97ux7ed3ux679cux5206ux6790}{%
+\subsubsection{3.
+计算结果分析}\label{3-ux8ba1ux7b97ux7ed3ux679cux5206ux6790}}
+
+从上述实验结果可以看出，对于不同的起始数据，牛顿迭代法的收敛速度是不一样的。越靠近根的起始数据的收敛速度越快。横向对比两个求根算法，可以看出牛顿迭代法的收敛速度比对分法快很多，牛顿迭代法只需要十几次就可以得出目标精度的结果，而使用对分法却需要进行多大三十次的计算。
+
+总体来看，虽然少数情况下牛顿迭代法不能收敛，但是大多数情况下它效果都非常好。对分法固定每次缩短一半的区间，而牛顿迭代法的迭代效率往往更高，一般情况下使用牛顿迭代法可以获得更快的收敛速度。
+
+\hypertarget{4-ux5b9eux9a8cux603bux7ed3}{%
+\subsubsection{4. 实验总结}\label{4-ux5b9eux9a8cux603bux7ed3}}
+
+通过这个实验，我再一次体会到算法从理论落地到实践的过程，这其中需要解决许多在理论推演过程中无法想象到的问题。比如在实验过程中，我遇到最大的问题就是double数据类型精度的损失问题。在对分法求根的程序编写过程中，我最初使用的是，区间两端的函数值相乘是否小于0作为下一次计算区间选择的判据。但是在程序调试中发现，这样的判断依据会使程序陷入无限循环。究其原因就是double双精度数据在相乘的过程中精度发生了损失。因此我针对性的修改了判据，从而解决了程序的问题。
+
+\end{document}
